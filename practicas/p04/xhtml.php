@@ -29,6 +29,13 @@
         echo '<li>$_element1 es válida porque inicia con guión bajo.</li>';
         echo '<li>$house*5 es inválida porque el símbolo * no está permitido.</li>';
         echo '</ul>';
+
+        unset($_myvar);
+        unset($_7var);
+        unset($myvar);
+        unset($var7);
+        unset($_element1);
+
     ?>
 </body>
 </html>
