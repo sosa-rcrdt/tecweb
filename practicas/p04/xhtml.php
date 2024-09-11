@@ -46,22 +46,22 @@
         $b = 'MySQL';
         $c = &$a;
 
-        echo $a;
+        echo '$a: '.$a;
         echo '<br>';
-        echo $b;
+        echo '$b: '.$b;
         echo '<br>';
-        echo $c;
+        echo '$c: '.$c;
 
         echo '<p> Agrega al código actual las siguientes asignaciones y Vuelve a mostrar el contenido de cada una de las variables:</p>';
 
         $a = "PHP server";
         $b = &$a;
 
-        echo $a;
+        echo '$a: '.$a;
         echo '<br>';
-        echo $b;
+        echo '$b: '.$b;
         echo '<br>';
-        echo $c;
+        echo '$c: '.$c;
 
         echo '<p> Se reescribió la variable $a, y la variable $b se asignó por referencia a la variable $a, por lo que al cambiar el valor de $a también cambia el valor de $b. 
         <br> La variable $c se asignó por referencia a la variable $a, por lo que al cambiar el valor de $a también cambia el valor de $c.</p>';
@@ -79,55 +79,116 @@
         arreglo):</p>';
 
         $a = "PHP5 ";
-        echo $a.'<br>';
+        echo '$a: '.$a.'<br>';
 
         $z[] = &$a;
+        echo'$z: ';
         print_r($z);
         echo '<br>';
 
         $b = "5a version de PHP";
-        echo $b.'<br>';
+        echo '$b: '.$b.'<br>';
 
         $c = (int)$b * 10;
-        echo $c.'<br>';
+        echo '$c: '.$c.'<br>';
 
         $a .= $b;
-        echo $a.'<br>';
+        echo '$a: '.$a.'<br>';
 
         $b = (int)$b*$c;
-        echo $b.'<br>';
+        echo '$b: '.$b.'<br>';
 
         $z[0] = "MySQL";
+        echo '$z: ';
         print_r($z);
 
         echo '<br>';
         echo '<br>';
+
+        //ejercicio 4
 
         echo '<h2>Ejercicio 4</h2>';
 
         echo '<p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
         la matriz $GLOBALS o del modificador global de PHP.</p>';
 
-        echo $GLOBALS['a'] . '<br>';
-        echo $GLOBALS['b'] . '<br>';
-        echo $GLOBALS['c'] . '<br>';
+        echo '$a: '.$GLOBALS['a'] . '<br>';
+        echo '$b: '.$GLOBALS['b'] . '<br>';
+        echo '$c: '.$GLOBALS['c'] . '<br>';
+        echo '$z: ';
         print_r($GLOBALS['z']);
+
+        unset($a);
+        unset($b);
+        unset($c);
+        unset($z);
+
+        //ejercicio 5
 
         echo '<h2>Ejercicio 5</h2>';
 
         echo '<p>Dar el valor de las variables $a, $b, $c al final del siguiente script:</p>';
 
         $a = "7 personas";
-        echo "$a <br>";
+        echo '$a: '.$a.'<br>';
         $b = (integer) $a;
-        echo "$b <br>";
+        echo '$b: '.$b.'<br>';
         $a = "9E3";
-        echo "$a <br>";
+        echo '$a: '.$a.'<br>';
         $c = (double) $a;
-        echo "$c <br>";
+        echo '$c: '.$c.'<br>';
 
-        ?>
+        unset($a);
+        unset($b);
+        unset($c);
 
+        //ejercicio 6
+
+        echo '<h2>Ejercicio 6</h2>';
+
+        echo '<p>Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas
+        usando la función var_dump(<datos>).</p>';
+
+        $a = "0";
+        $b = "TRUE";
+        $c = FALSE;
+        $d = ($a OR $b);
+        $e = ($a AND $c);
+        $f = ($a XOR $b);
+
+        echo '$a: ';
+        var_dump($a);
+        echo "<br>";
+        echo '$b: ';
+        var_dump($b);
+        echo "<br>";
+        echo '$c: ';
+        var_dump($c);
+        echo "<br>";
+        echo '$d: ';
+        var_dump($d);
+        echo "<br>";
+        echo '$e: ';
+        var_dump($e);
+        echo "<br>";
+        echo '$f: ';
+        var_dump($f);
+        echo "<br>";
+
+        echo '<p>Después investiga una función de PHP que permita transformar el valor booleano de $c y $e
+        en uno que se pueda mostrar con un echo:</p>';
+
+        echo '$c: ' . var_export($c, true) . '<br>';
+        echo '$e: ' . var_export($e, true) . '<br>';
+
+        unset($a);
+        unset($b);
+        unset($c);
+        unset($d);
+        unset($e);
+        unset($f);
+
+        
     ?>
 </body>
 </html>
