@@ -36,6 +36,79 @@
         unset($var7);
         unset($_element1);
 
+        //ejercicio 2
+
+        echo '<h2>Ejercicio 2</h2>';
+
+        echo '<p> Proporcionar los valores de $a, $b, $c como sigue y muestra el contenido de cada variable:</p>';
+
+        $a = "ManejadorSQL";
+        $b = 'MySQL';
+        $c = &$a;
+
+        echo $a;
+        echo '<br>';
+        echo $b;
+        echo '<br>';
+        echo $c;
+
+        echo '<p> Agrega al código actual las siguientes asignaciones y Vuelve a mostrar el contenido de cada una de las variables:</p>';
+
+        $a = "PHP server";
+        $b = &$a;
+
+        echo $a;
+        echo '<br>';
+        echo $b;
+        echo '<br>';
+        echo $c;
+
+        echo '<p> Se reescribió la variable $a, y la variable $b se asignó por referencia a la variable $a, por lo que al cambiar el valor de $a también cambia el valor de $b. 
+        <br> La variable $c se asignó por referencia a la variable $a, por lo que al cambiar el valor de $a también cambia el valor de $c.</p>';
+
+        unset($a);
+        unset($b);
+        unset($c);
+
+        //ejercicio 3
+
+        echo '<h2>Ejercicio 3</h2>';
+
+        echo '<p>Muestra el contenido de cada variable inmediatamente después de cada asignación,
+        verificar la evolución del tipo de estas variables (imprime todos los componentes de los
+        arreglo):</p>';
+
+        $a = "PHP5 ";
+        echo $a.'<br>';
+
+        $z[] = &$a;
+        print_r($z);
+        echo '<br>';
+
+        $b = "5a version de PHP";
+        echo $b.'<br>';
+
+        $c = (int)$b * 10;
+        echo $c.'<br>';
+
+        $a .= $b;
+        echo $a.'<br>';
+
+        $b = (int)$b*$c;
+        echo $b.'<br>';
+
+        $z[0] = "MySQL";
+        print_r($z);
+
+        echo '<br>';
+        echo '<br>';
+
+        echo $GLOBALS['a'] . '<br>';
+        echo $GLOBALS['b'] . '<br>';
+        echo $GLOBALS['c'] . '<br>';
+        print_r($GLOBALS['z']);
+        ?>
+
     ?>
 </body>
 </html>
