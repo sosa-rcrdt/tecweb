@@ -103,6 +103,11 @@
         echo '<br>';
         echo '<br>';
 
+        echo '<h2>Ejercicio 4</h2>';
+
+        echo '<p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
+        la matriz $GLOBALS o del modificador global de PHP.</p>';
+
         echo $GLOBALS['a'] . '<br>';
         echo $GLOBALS['b'] . '<br>';
         echo $GLOBALS['c'] . '<br>';
