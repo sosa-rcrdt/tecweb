@@ -62,21 +62,22 @@
         bienvenida($_POST["edad"], $_POST["sexo"]);
     ?>
 
-    <h2>Ejemplo de POST</h2>
-    <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
-        Name: <input type="text" name="name"><br>
-        E-mail: <input type="text" name="email"><br>
-        <input type="submit">
-    </form>
-    <br>
+    <fieldset>
+        <legend><h2>Ejercicio 6</h2></legend>
+        <form method="post">
+            Matrícula: <input type="text" name="matricula">
+            <input type="submit" value="Consultar">
+            <br>
+        </form>
+        <form method="post">
+            <input type="submit" name="todos" value="Mostrar Todos los Autos" style="margin-bottom: 20px">
+        </form>
+    </fieldset>
     <?php
-        if(isset($_POST["name"]) && isset($_POST["email"]))
-        {
-            echo $_POST["name"];
-            echo '<br>';
-            echo $_POST["email"];
-        }
+    include_once 'src/funciones.php';
+    $matricula = isset($_POST["matricula"]) ? $_POST["matricula"] : null;
+    $todos = isset($_POST["todos"]) ? $_POST["todos"] : null;
+    mostrarAutos($matricula, $todos);
     ?>
-
 </body>
 </html>
