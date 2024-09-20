@@ -44,6 +44,24 @@
         generarArregloLetras();
     ?>
 
+    <fieldset>
+        <legend><h2>Ejercicio 5</h2></legend>
+        <form method="post">
+            <label for="edad">Introduce tu edad</label><br>
+            <input type="text" name="edad" id="edad" oninput="this.value = this.value.replace(/[^0-9]/g, '');" required><br><br>
+            <label for="sexo">Selecciona tu sexo</label><br>
+            <select name="sexo" id="sexo">
+                <option value="femenino">Femenino</option>
+                <option value="masculino">Masculino</option>
+            </select><br><br>
+            <input type="submit" style="margin-bottom: 15px">
+        </form>
+    </fieldset>
+    <?php
+        include_once 'src/funciones.php';
+        bienvenida($_POST["edad"], $_POST["sexo"]);
+    ?>
+
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>
@@ -62,4 +80,3 @@
 
 </body>
 </html>
-<!-- Ejercicio  1 multiplo de 5 y 7 -->
