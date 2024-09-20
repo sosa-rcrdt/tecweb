@@ -57,4 +57,17 @@
         echo '<h3>R= El número '.$num.' es múltiplo de '.$numero.'</h3>';
         echo '<h3>Se encontró en '.$contador.' intentos</h3>';
     }
+
+    function generarArregloLetras() {
+        $letras = array();
+        for ($i = 97; $i <= 122; $i++) {
+            $letras[$i] = chr($i); #chr — Devuelve un caracter específico por su código ASCII 
+        }
+        #Lee el arreglo y crea una tabla en XHTML con echo y un ciclo foreach
+        echo "<table border='1' width=100px style='text-align: center;'>";
+        foreach ($letras as $key => $value) {
+            echo "<tr><td>$key</td><td>$value</td></tr>";
+        }
+        echo "</table>";
+    }
 ?>
