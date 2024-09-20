@@ -47,4 +47,14 @@
         // Mostrar resultados
         echo "$totalNumerosGenerados numeros obtenidos en $iteraciones iteraciones";
     }
+
+    function multiploazar($numero) {
+        $contador = 0;
+        do {
+            $contador++;
+            $num = rand(1, 999);
+        } while ($num % $numero != 0);
+        echo '<h3>R= El número '.$num.' es múltiplo de '.$numero.'</h3>';
+        echo '<h3>Se encontró en '.$contador.' intentos</h3>';
+    }
 ?>
