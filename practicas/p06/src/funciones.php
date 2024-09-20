@@ -11,4 +11,40 @@
         }
     }
 
+    function generarMatriz() {
+        $matriz = array();
+        $secuenciaEncontrada = false;
+        $iteraciones = 0;
+        $totalNumerosGenerados = 0;
+
+        while (!$secuenciaEncontrada) {
+            $fila = array();
+            $fila[] = rand(1, 999); // Primer número (impar)
+            $fila[] = rand(1, 999); // Segundo número (par)
+            $fila[] = rand(1, 999); // Tercer número (impar)
+
+            // Incrementamos la cuenta de números generados
+            $totalNumerosGenerados += 3;
+            $iteraciones++;
+
+            // Comprobar si la secuencia es impar, par, impar
+            if ($fila[0]% 2 !== 0 && $fila[1]%2 ===0 && $fila[2]% 2 !== 0) {
+                $secuenciaEncontrada = true;
+            }
+
+            // Agregar la fila a la matriz
+            $matriz[] = $fila;
+        }
+
+        //print_r($matriz);
+        // Mostrar la matriz
+
+        echo "Matriz generada:<br>";
+        foreach ($matriz as $fila) {
+            echo implode(", ", $fila) . "<br>";
+        }
+
+        // Mostrar resultados
+        echo "$totalNumerosGenerados numeros obtenidos en $iteraciones iteraciones";
+    }
 ?>

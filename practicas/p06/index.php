@@ -21,6 +21,14 @@
         }
     ?>
 
+    <h2>Ejercicio 2</h2>
+    <p>Generar 3 números aleatorios hasta obtener una secuencia compuesta por 3 números con la estructura impar, par, impar</p>
+    <?php
+        include_once 'src/funciones.php';
+        // Ejecutar el programa
+        generarMatriz();
+    ?>
+
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>
