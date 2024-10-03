@@ -2,25 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Práctica 3</title>
+    <title>Práctica 4</title>
 </head>
 <body>
     <h2>Ejercicio 1</h2>
     <p>Determina cuál de las siguientes variables son válidas y explica por qué:</p>
     <p>$_myvar,  $_7var,  myvar,  $myvar,  $var7,  $_element1, $house*5</p>
     <?php
-        //AQUI VA MI CÓDIGO PHP
-        $_myvar;
-        $_7var;
-        //myvar;       // Inválida
-        $myvar;
-        $var7;
-        $_element1;
-        //$house*5;     // Invalida
+        // Inicializar variables
+        $_myvar = null;
+        $_7var = null;
+        // myvar es inválida porque no tiene el signo de dolar ($).
+        $myvar = null;
+        $var7 = null;
+        $_element1 = null;
+        // $house*5 es inválida porque el símbolo * no está permitido.
 
         echo '<h4>Respuesta:</h4>';
-
-        echo '<ul>';
+        echo '<p><ul>';
         echo '<li>$_myvar es válida porque inicia con guión bajo.</li>';
         echo '<li>$_7var es válida porque inicia con guión bajo.</li>';
         echo '<li>myvar es inválida porque no tiene el signo de dolar ($).</li>';
@@ -28,124 +27,98 @@
         echo '<li>$var7 es válida porque inicia con una letra.</li>';
         echo '<li>$_element1 es válida porque inicia con guión bajo.</li>';
         echo '<li>$house*5 es inválida porque el símbolo * no está permitido.</li>';
-        echo '</ul>';
+        echo '</ul></p>';
 
-        unset($_myvar);
-        unset($_7var);
-        unset($myvar);
-        unset($var7);
-        unset($_element1);
+        // Destrucción de variables
+        unset($_myvar, $_7var, $myvar, $var7, $_element1);
 
-        //ejercicio 2
-
+        // Ejercicio 2
         echo '<h2>Ejercicio 2</h2>';
-
         echo '<p> Proporcionar los valores de $a, $b, $c como sigue y muestra el contenido de cada variable:</p>';
 
         $a = "ManejadorSQL";
         $b = 'MySQL';
-        $c = &$a;
+        $c = &$a; // Asignación por referencia
 
-        echo '$a: '.$a;
-        echo '<br>';
-        echo '$b: '.$b;
-        echo '<br>';
-        echo '$c: '.$c;
+        echo '<p>$a: '.$a.'</p>';
+        echo '<p>$b: '.$b.'</p>';
+        echo '<p>$c: '.$c.'</p>';
 
-        echo '<p> Agrega al código actual las siguientes asignaciones y Vuelve a mostrar el contenido de cada una de las variables:</p>';
+        $a = "PHP server"; // Cambiando el valor de $a
+        $b = &$a; // $b ahora apunta a $a
 
-        $a = "PHP server";
-        $b = &$a;
-
-        echo '$a: '.$a;
-        echo '<br>';
-        echo '$b: '.$b;
-        echo '<br>';
-        echo '$c: '.$c;
+        echo '<p>$a: '.$a.'</p>';
+        echo '<p>$b: '.$b.'</p>';
+        echo '<p>$c: '.$c.'</p>';
 
         echo '<p> Se reescribió la variable $a, y la variable $b se asignó por referencia a la variable $a, por lo que al cambiar el valor de $a también cambia el valor de $b. 
-        <br> La variable $c se asignó por referencia a la variable $a, por lo que al cambiar el valor de $a también cambia el valor de $c.</p>';
+        <br/> La variable $c se asignó por referencia a la variable $a, por lo que al cambiar el valor de $a también cambia el valor de $c.</p>';
 
-        unset($a);
-        unset($b);
-        unset($c);
+        unset($a, $b, $c);
 
-        //ejercicio 3
-
+        // Ejercicio 3
         echo '<h2>Ejercicio 3</h2>';
-
         echo '<p>Muestra el contenido de cada variable inmediatamente después de cada asignación,
         verificar la evolución del tipo de estas variables (imprime todos los componentes de los
         arreglo):</p>';
 
         $a = "PHP5 ";
-        echo '$a: '.$a.'<br>';
+        echo '<p>$a: '.$a.'</p>';
 
-        $z[] = &$a;
-        echo'$z: ';
+        $z[] = &$a; // Asignación por referencia
+        echo '<p>$z: ';
         print_r($z);
-        echo '<br>';
+        echo '</p>';
 
         $b = "5a version de PHP";
-        echo '$b: '.$b.'<br>';
+        echo '<p>$b: '.$b.'</p>';
 
-        $c = (int)$b * 10;
-        echo '$c: '.$c.'<br>';
+        $c = (int)$b * 10; // Convierte $b a entero
+        echo '<p>$c: '.$c.'</p>';
 
-        $a .= $b;
-        echo '$a: '.$a.'<br>';
+        $a .= $b; // Concatenación
+        echo '<p>$a: '.$a.'</p>';
 
-        $b = (int)$b*$c;
-        echo '$b: '.$b.'<br>';
+        $b = (int)$b * $c; // Multiplicación
+        echo '<p>$b: '.$b.'</p>';
 
-        $z[0] = "MySQL";
-        echo '$z: ';
+        $z[0] = "MySQL"; // Cambia el primer elemento de $z
+        echo '<p>$z: ';
         print_r($z);
+        echo '</p><br/>';
 
-        echo '<br>';
-        echo '<br>';
-
-        //ejercicio 4
-
+        // Ejercicio 4
         echo '<h2>Ejercicio 4</h2>';
-
         echo '<p>Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de
         la matriz $GLOBALS o del modificador global de PHP.</p>';
 
-        echo '$a: '.$GLOBALS['a'] . '<br>';
-        echo '$b: '.$GLOBALS['b'] . '<br>';
-        echo '$c: '.$GLOBALS['c'] . '<br>';
-        echo '$z: ';
-        print_r($GLOBALS['z']);
+        // Verifica si las variables existen antes de acceder a ellas
+        echo '<p>$a: '.(isset($GLOBALS['a']) ? $GLOBALS['a'] : 'No definida').'</p>';
+        echo '<p>$b: '.(isset($GLOBALS['b']) ? $GLOBALS['b'] : 'No definida').'</p>';
+        echo '<p>$c: '.(isset($GLOBALS['c']) ? $GLOBALS['c'] : 'No definida').'</p>';
+        echo '<p>$z: ';
+        print_r(isset($GLOBALS['z']) ? $GLOBALS['z'] : 'No definida');
+        echo '</p>';
 
-        unset($a);
-        unset($b);
-        unset($c);
-        unset($z);
+        unset($a, $b, $c, $z);
 
-        //ejercicio 5
-
+        // Ejercicio 5
         echo '<h2>Ejercicio 5</h2>';
-
         echo '<p>Dar el valor de las variables $a, $b, $c al final del siguiente script:</p>';
 
         $a = "7 personas";
-        echo '$a: '.$a.'<br>';
-        $b = (integer) $a;
-        echo '$b: '.$b.'<br>';
-        $a = "9E3";
-        echo '$a: '.$a.'<br>';
-        $c = (double) $a;
-        echo '$c: '.$c.'<br>';
+        echo '<p>$a: '.$a.'</p>';
+        $b = (integer)$a; // Convierte a entero
+        echo '<p>$b: '.$b.'</p>';
+        $a = "9E3"; // Cambia el valor de $a
+        echo '<p>$a: '.$a.'</p>';
+        $c = (double)$a; // Convierte a doble
+        echo '<p>$c: '.$c.'</p>';
 
-        unset($a);
-        unset($b);
-        unset($c);
+        unset($a, $b, $c);
 
-        //ejercicio 6
-
+        // Ejercicio 6
         echo '<h2>Ejercicio 6</h2>';
-
         echo '<p>Dar y comprobar el valor booleano de las variables $a, $b, $c, $d, $e y $f y muéstralas
         usando la función var_dump(<datos>).</p>';
 
@@ -156,50 +129,47 @@
         $e = ($a AND $c);
         $f = ($a XOR $b);
 
-        echo '$a: ';
+        echo '<p>$a: ';
         var_dump($a);
-        echo "<br>";
-        echo '$b: ';
+        echo '</p>';
+        echo '<p>$b: ';
         var_dump($b);
-        echo "<br>";
-        echo '$c: ';
+        echo '</p>';
+        echo '<p>$c: ';
         var_dump($c);
-        echo "<br>";
-        echo '$d: ';
+        echo '</p>';
+        echo '<p>$d: ';
         var_dump($d);
-        echo "<br>";
-        echo '$e: ';
+        echo '</p>';
+        echo '<p>$e: ';
         var_dump($e);
-        echo "<br>";
-        echo '$f: ';
+        echo '</p>';
+        echo '<p>$f: ';
         var_dump($f);
-        echo "<br>";
+        echo '</p>';
 
         echo '<p>Después investiga una función de PHP que permita transformar el valor booleano de $c y $e
         en uno que se pueda mostrar con un echo:</p>';
 
-        echo '$c: ' . var_export($c, true) . '<br>';
-        echo '$e: ' . var_export($e, true) . '<br>';
+        echo '<p>$c: ' . var_export($c, true) . '</p>';
+        echo '<p>$e: ' . var_export($e, true) . '</p>';
 
-        unset($a);
-        unset($b);
-        unset($c);
-        unset($d);
-        unset($e);
-        unset($f);
+        unset($a, $b, $c, $d, $e, $f);
 
-        //ejercicio 7
-
+        // Ejercicio 7
         echo '<h2>Ejercicio 7</h2>';
-
         echo '<p> Usando la variable predefinida $_SERVER, determina lo siguiente:</p>';
 
         echo '<p> <b> a. </b> La versión de Apache y PHP</p>';
-        echo 'Version de Apache: '.$_SERVER['SERVER_SOFTWARE'].'<br>';
+        echo '<p>Version de Apache: '.$_SERVER['SERVER_SOFTWARE'].'</p>';
         echo '<p> <b> b. </b> El nombre del sistema operativo (servidor), </p>';
-        echo 'Nombre del sistema operativo: '.$_SERVER['SERVER_NAME'].'<br>';
+        echo '<p>Nombre del sistema operativo: '.$_SERVER['SERVER_NAME'].'</p>';
         echo '<p> <b> c. </b> El idioma del navegador (cliente).</p>';
-        echo 'Idioma del navegador: '.$_SERVER['HTTP_ACCEPT_LANGUAGE'].'<br>';
+        echo '<p>Idioma del navegador: '.$_SERVER['HTTP_ACCEPT_LANGUAGE'].'</p>';
     ?>
+    <p>
+        <a href="https://validator.w3.org/markup/check?uri=referer"><img
+        src="https://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+    </p>
 </body>
 </html>
