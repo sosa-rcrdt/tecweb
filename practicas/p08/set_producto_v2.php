@@ -6,7 +6,7 @@ $modelo = $_POST['modelo'];
 $precio = $_POST['precio'];
 $detalles = $_POST['detalles'];
 $unidades = $_POST['unidades'];
-$imagen = '0';
+$imagen = $_POST['imagen'];
 
 /** SE CREA EL OBJETO DE CONEXION */
 @$link = new mysqli('localhost', 'root', 'changocome', 'marketzone', 3307);
@@ -26,7 +26,8 @@ $sql = "SELECT * FROM productos WHERE nombre = '{$nombre}' AND marca = '{$marca}
         echo '<p><strong>Marca:</strong> '.$marca.'</p>';
         echo '<p><strong>Modelo:</strong> '.$modelo.'</p>';
     } else {
-        $sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}', 0)";
+        //$sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}', 0)";
+        $sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) VALUES ('{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}')";
         if ($link->query($sql)) { // Ejecuta la consulta y guarda el resultado
             echo '<h1>Producto Insertado</h1>';
             echo '<p><strong>Nombre:</strong> '.$nombre.'</p>';
