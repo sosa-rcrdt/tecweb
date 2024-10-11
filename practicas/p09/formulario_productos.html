@@ -12,32 +12,49 @@
 
     <form id="formularioProductos" method="post">
 
-    <fieldset>
-        <legend><b>Información del producto</b></legend>
+        <fieldset>
+            <legend><b>Información del producto</b></legend>
+            <ul>
+                <li>
+                    <label for="form-name">Nombre:</label>
+                    <input type="text" name="nombre" id="form-name">
+                </li><br/>
+                <li>
+                    <label for="form-brand">Marca:</label>
+                    <select name="marca" id="form-brand">
+                        <option value="" disabled selected>Selecciona una marca</option>
+                        <option value="Nintendo">Nintendo</option>
+                        <option value="Xbox">Xbox</option>
+                        <option value="Playstation">Playstation</option>
+                    </select>
+                </li><br/>
+                <li>
+                    <label for="form-model">Modelo:</label>
+                    <input type="text" name="modelo" id="form-model">
+                </li><br/>
+                <li>
+                    <label for="form-price">Precio:</label>
+                    <input type="tel" name="precio" id="form-price">
+                </li><br/>
+                <li>
+                    <label for="form-details">Detalles del producto:</label><br/>
+                    <textarea name="detalles" rows="4" cols="60" id="form-story" placeholder="No más de 250 caracteres de longitud"></textarea>
+                </li><br/>
+                <li>
+                    <label for="form-units">Unidades:</label>
+                    <input type="tel" name="unidades" id="form-units">
+                </li><br/>
+                <li>
+                    <label for="form-img">Imagen:</label>
+                    <input type="text" name="imagen" id="form-img">
+                </li>
+            </ul>
+        </fieldset>
 
-        <ul>
-            <li><label for="form-name">Nombre:</label> <input type="text" name="nombre" id="form-name" onblur="validarNombre();" required></li><br/>
-            <li>
-                <label for="form-brand">Marca:</label>
-                <select name="marca" id="form-brand" required>
-                    <option value="" disabled selected>Selecciona una marca</option>
-                    <option value="Nintendo">Nintendo</option>
-                    <option value="Xbox">Xbox</option>
-                    <option value="Playstation">Playstation</option>
-                </select>
-            </li><br/>
-            <li><label for="form-model">Modelo:</label> <input type="text" name="modelo" id="form-model" onblur="validarModelo();" required></li><br/>
-            <li><label for="form-price">Precio:</label> <input type="tel" name="precio" id="form-price" onblur="validarPrecio();" required></li><br/>
-            <li><label for="form-details">Detalles del producto</label><br/><textarea name="detalles" rows="4" cols="60" id="form-story" placeholder="No más de 250 caracteres de longitud" onblur="validarHistoria();"></textarea></li><br/>
-            <li><label for="form-units">Unidades:</label> <input type="tel" name="unidades" id="form-units" onblur="validarUnidades();" required></li><br/>
-            <li><label for="form-img">Imagen:</label> <input type="text" name="imagen" id="form-img" onblur="validarImagen();" required></li>
-        </ul>
-    </fieldset>
-
-    <p>
-        <input type="submit" value="Enviar Producto">
-        <input type="reset">
-    </p>
+        <p>
+            <input type="submit" value="Enviar Producto">
+            <input type="reset" value="Restablecer">
+        </p>
 
 </body>
 </html>
