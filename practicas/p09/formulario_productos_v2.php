@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario Productos</title>
+    <title>Actualizar Productos</title>
     <script src="./src/validar_formulario.js"></script>
 </head>
 <body>
 
-    <h1>Añadir un nuevo producto</h1>
+    <h1>Actualizar producto</h1>
 
-    <form id="formularioProductos" method="post">
+    <form id="formularioProductos" action="http://localhost/tecweb/practicas/p09/update_producto.php" method="post">
 
         <fieldset>
             <legend><b>Información del producto</b></legend>
             <ul>
+                <input type="hidden" name="id" value="<?= !empty($_POST['id']) ? $_POST['id'] : $_GET['id'] ?>">
                 <li>
                     <label for="form-name">Nombre:</label>
                     <input type="text" name="nombre" id="form-name" value="<?= !empty($_POST['nombre']) ? htmlspecialchars($_POST['nombre']) : htmlspecialchars($_GET['nombre']) ?>">
@@ -38,7 +39,7 @@
                 </li><br/>
                 <li>
                     <label for="form-details">Detalles del producto:</label><br/>
-                    <textarea name="detalles" rows="4" cols="60" id="form-story" placeholder="No más de 250 caracteres de longitud"><?= !empty($_POST['detalles']) ? htmlspecialchars($_POST['detalles']) : htmlspecialchars($_GET['detalles']) ?></textarea>
+                    <textarea name="detalles" rows="4" cols="60" id="form-story" placeholder="No más de 250 caracteres de longitud"><?= isset($_POST['detalles']) ? htmlspecialchars($_POST['detalles']) : (isset($_GET['detalles']) ? htmlspecialchars($_GET['detalles']) : '') ?></textarea>
                 </li><br/>
                 <li>
                     <label for="form-units">Unidades:</label>
@@ -52,7 +53,7 @@
         </fieldset>
 
         <p>
-            <input type="submit" value="Enviar Producto">
+            <input type="submit" value="Actualizar producto">
             <input type="reset" value="Restablecer">
         </p>
 
