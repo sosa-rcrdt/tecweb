@@ -241,7 +241,6 @@ $(document).ready(function() {
 
     $(document).on('click', '.product-item', function() {
         let id = $(this)[0].parentElement.parentElement.getAttribute('productid');
-        console.log(id);
         $.post('./backend/product-single.php', {id}, function(response){
             const product = JSON.parse(response);
             $('#name').val(product[0].nombre);

@@ -41,7 +41,7 @@ if (!empty($producto)) {
             }
         } else {
             // Producto no encontrado
-            $data['message'] = "No se encontró el producto con el nombre especificado.";
+            $data['message'] = "No se encontro el producto con el nombre especificado.";
         }
 
         $result->free();
