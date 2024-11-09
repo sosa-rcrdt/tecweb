@@ -123,10 +123,30 @@ $(document).ready(function() {
 
     $('#product-form').submit(function(e) {
         e.preventDefault();
-        var productoJsonString = document.getElementById('description').value;
+
+        // Crear un objeto con las propiedades deseadas
+        var yeison = {
+            id: $('#productId').val(),
+            nombre: $('#form-name').val(),
+            marca: $('#form-brand').val(),
+            modelo: $('#form-model').val(),
+            precio: $('#form-price').val(),
+            detalles: $('#form-story').val(),
+            unidades: $('#form-units').val(),
+            imagen: $('#form-img').val()
+        };
+
+        // Convertir el objeto a JSON
+        var productoJsonString = JSON.stringify(yeison, null, 3);
+
+        // Si necesitas manipular alguna propiedad en `yeison` después
+        yeison['nombre'] = document.getElementById('form-name').value;
+        yeison['id'] = document.getElementById('productId').value;
+
+        // Volver a convertir el objeto actualizado a JSON si es necesario
+        productoJsonString = JSON.stringify(yeison, null, 3);
+
         var finalJSON = JSON.parse(productoJsonString);
-        finalJSON['nombre'] = document.getElementById('name').value;
-        finalJSON['id'] = document.getElementById('productId').value;
         productoJsonString = JSON.stringify(finalJSON, null, 3);
 
         let template_bar = '';
@@ -216,7 +236,6 @@ $(document).ready(function() {
                     document.getElementById("container").innerHTML = template_bar;
 
                     listadoProductos();
-                    init();
                     edit = false;
                     $('#submit-button').text('Agregar Producto');
                     $('#name').val('');
@@ -250,17 +269,21 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.product-item', function() {
-        let id = $(this)[0].parentElement.parentElement.getAttribute('productid');
+        let id = $(this)[0].parentElement.parentElement.getAttribute('productId');
+        console.log(id);
         $.post('./backend/product-single.php', {id}, function(response){
             const product = JSON.parse(response);
-            $('#name').val(product[0].nombre);
-            $('#productId').val(product[0].id);
-            let productWithoutNameAndId = {...product[0]};
-            delete productWithoutNameAndId.nombre;
-            delete productWithoutNameAndId.id;
-            delete productWithoutNameAndId.eliminado;
+            console.log(response);
 
-            $('#description').val(JSON.stringify(productWithoutNameAndId, null, 4));
+            $('#productId').val(id);
+            $('#form-name').val(product[0].nombre);
+            $('#form-brand').val(product[0].marca);
+            $('#form-model').val(product[0].modelo);
+            $('#form-price').val(product[0].precio);
+            $('#form-story').val(product[0].detalles);
+            $('#form-units').val(product[0].unidades);
+            $('#form-img').val(product[0].imagen);
+            
             edit = true;
 
             $('#submit-button').text('Editar Producto');
