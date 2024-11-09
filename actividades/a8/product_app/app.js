@@ -238,7 +238,14 @@ $(document).ready(function() {
                     listadoProductos();
                     edit = false;
                     $('#submit-button').text('Agregar Producto');
-                    $('#name').val('');
+                    $('#form-name').val('');
+                    $('#form-brand').val('');
+                    $('#form-model').val('');
+                    $('#form-price').val('');
+                    $('#form-story').val('');
+                    $('#form-units').val('');
+                    $('#form-img').val('');
+                    $('#productId').val('');
                 }
             });
         }
