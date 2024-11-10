@@ -27,7 +27,6 @@ $(document).ready(function() {
             url: './backend/product-list.php',
             type: 'GET',
             success: function(response){
-                console.log(response);
                 let productos = JSON.parse(response);
                 if(Object.keys(productos).length > 0) {
                     let template = '';
@@ -234,6 +233,9 @@ $(document).ready(function() {
         }
 
         else{
+            let url = edit === false ? './backend/product-add.php' : './backend/product-edit.php';
+            console.log(finalJSON);
+
             $.ajax({
                 url: url,
                 type: 'POST',

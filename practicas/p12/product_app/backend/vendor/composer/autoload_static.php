@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInit806adb67becb1b585ff0ca0da016632e
 {
     public static $prefixLengthsPsr4 = array (
-        'T' => 
+        'T' =>
         array (
             'TECWEB\\MYAPI\\' => 13,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'TECWEB\\MYAPI\\' => 
+        'TECWEB\\MYAPI\\' =>
         array (
             0 => __DIR__ . '/../..' . '/myapi',
         ),
