@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-7"?>
+<catalogovod>
+    <cuenta>
+        <correo>sosafco3@gmail.com</correo>
+        <perfiles>
+            <perfil>
+                <usuario>Nelson</usuario>
+                <idioma>Español</idioma>
+            </perfil>
+            <perfil>
+                <usuario>Richard</usuario>
+                <idioma>Inglés</idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero>
+                <nombre>Comedia</nombre>
+                <titulo>
+                    <nombre>La Gran Aventura Lego</nombre>
+                    <duracion>100 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Supercool</nombre>
+                    <duracion>113 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Zombieland</nombre>
+                    <duracion>88 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Jumanji: Bienvenidos a la Jungla</nombre>
+                    <duracion>119 minutos</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Romance</nombre>
+                <titulo>
+                    <nombre>La La Land</nombre>
+                    <duracion>128 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>El Diario de una Pasión</nombre>
+                    <duracion>123 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Orgullo y Prejuicio</nombre>
+                    <duracion>129 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Antes de Amanecer</nombre>
+                    <duracion>101 minutos</duracion>
+                </titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero>
+                <nombre>Documentales</nombre>
+                <titulo>
+                    <nombre>Planeta Tierra</nombre>
+                    <duracion>11 episodios</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Cosmos</nombre>
+                    <duracion>13 episodios</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Nuestro Planeta</nombre>
+                    <duracion>8 episodios</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Vida</nombre>
+                    <duracion>10 episodios</duracion>
+                </titulo>
+            </genero>
+            <genero>
+                <nombre>Animación</nombre>
+                <titulo>
+                    <nombre>Avatar: La Leyenda de Aang</nombre>
+                    <duracion>61 episodios</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Gravity Falls</nombre>
+                    <duracion>40 episodios</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Rick y Morty</nombre>
+                    <duracion>61 episodios</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>BoJack Horseman</nombre>
+                    <duracion>77 episodios</duracion>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>
