@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-7"?>
+<!DOCTYPE catalogovod  SYSTEM "serviciovod.dtd">
+<catalogovod>
+    <cuenta correo="sosafco3@gmail.com">
+        <perfiles>
+            <perfil nombre="Nelson" idioma="Español" />
+            <perfil nombre="Richard" idioma="Inglés" />
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Comedia">
+                <titulo nombre="La Gran Aventura Lego" duracion="100 minutos" />
+                <titulo nombre="Supercool" duracion="113 minutos" />
+                <titulo nombre="Zombieland" duracion="88 minutos" />
+                <titulo nombre="Jumanji: Bienvenidos a la Jungla" duracion="119 minutos" />
+            </genero>
+            <genero nombre="Romance">
+                <titulo nombre="La La Land" duracion="128 minutos" />
+                <titulo nombre="El Diario de una Pasión" duracion="123 minutos" />
+                <titulo nombre="Orgullo y Prejuicio" duracion="129 minutos" />
+                <titulo nombre="Antes de Amanecer" duracion="101 minutos" />
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Documentales">
+                <titulo nombre="Planeta Tierra" duracion="11 episodios" />
+                <titulo nombre="Cosmos" duracion="13 episodios" />
+                <titulo nombre="Nuestro Planeta" duracion="8 episodios" />
+                <titulo nombre="Vida" duracion="10 episodios" />
+            </genero>
+            <genero nombre="Animación">
+                <titulo nombre="Avatar: La Leyenda de Aang" duracion="61 episodios" />
+                <titulo nombre="Gravity Falls" duracion="40 episodios" />
+                <titulo nombre="Rick y Morty" duracion="61 episodios" />
+                <titulo nombre="BoJack Horseman" duracion="77 episodios" />
+            </genero>
+        </programas>
+    </contenido>
+</catalogovod>
