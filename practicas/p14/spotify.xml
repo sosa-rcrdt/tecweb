@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spotify xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="spotify_v2.xsd">
+    <Cuenta id="1" plan="premium" fechaIni="2022-02-01" fechaFin="2023-02-01">
+        <Nombre>Nelson Sosa</Nombre>
+        <Correo>sosafco3@gmail.com</Correo>
+        <Telefono tipo="movil">000-123-4567</Telefono>
+    </Cuenta>
+    <Cuenta id="2" plan="premium" fechaIni="2023-03-02" fechaFin="2024-03-02">
+        <Nombre>Ash Ketchum</Nombre>
+        <Correo>pokemon10@gmail.com</Correo>
+        <Telefono tipo="movil">000-987-6543</Telefono>
+    </Cuenta>
+</Spotify>
